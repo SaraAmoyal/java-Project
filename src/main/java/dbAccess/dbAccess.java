@@ -45,9 +45,7 @@ public class dbAccess {
             }
             programmerList.addAll(dataMembers);
             return dataMembers;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
+        }  catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
@@ -74,8 +72,8 @@ public class dbAccess {
 
     public static task getTask(int taskCode) {
         if(taskList==null){
-        String selectSql = "select * from tasks";
-        try {
+          String selectSql = "select * from tasks";
+          try {
             connection = DriverManager.getConnection(db_URL, User, PASS);
             ps = connection.prepareStatement(selectSql);
             rs = ps.executeQuery();
@@ -89,11 +87,9 @@ public class dbAccess {
             }
             taskList.addAll(tasks);
 
-        } catch (SQLException e) {
+          } catch (Exception e) {
             e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
+          }   finally {
             try {
                 if (rs != null)
                     rs.close();
@@ -151,9 +147,7 @@ public class dbAccess {
                         rs.getDate("endDate"))) ;
             }
             return retTaskList;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
+        }  catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
@@ -194,9 +188,7 @@ public class dbAccess {
                 return false;
             else
                 return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
+        }  catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
@@ -240,9 +232,7 @@ public class dbAccess {
                 return false;
             else
                 return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
+        }  catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
@@ -286,9 +276,7 @@ public class dbAccess {
                 return false;
             else
                 return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
+        }  catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
@@ -331,9 +319,7 @@ public class dbAccess {
                 return false;
             else
                 return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
+        }  catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
